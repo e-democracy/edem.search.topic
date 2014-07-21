@@ -11,7 +11,7 @@ jQuery.noConflict()
 
 function gs_search_topics_site_homepage () {
     var searchId='#gs-search-topic-site-home-search', topicSearch=null;
-    topicSearch = GSSearch(searchId, '/s/search.ajax', 0, 10, {m:'1'},  null);
+    topicSearch = GSSearch(searchId, '/s/search.ajax', 0, 10, {mg:'1'},  null);
     jQuery('#gs-site-home-activity-tabs li:first-child a').click();
     topicSearch.load();
 }
