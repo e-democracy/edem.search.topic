@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configure xmlns="http://namespaces.zope.org/zope"
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:five="http://namespaces.zope.org/five">
+
+    
+  <browser:resource
+    name="edem-search-topic-site-homepage-20140721.js"
+    layer="edem.skin.interfaces.IEDemLayer"
+    file="browser/javascript/loadtopic.js"
+    permission="zope2.Public" />
+  <browser:resource
+    name="edem-search-topic-site-homepage-min-20140721.js"
+    layer="edem.skin.interfaces.IEDemLayer"
+    file="browser/javascript/loadtopic-min.js"
+    permission="zope2.Public" />
+  <!--The viewlet to include all the JavaScript-->
+  <browser:viewlet
+    name="edem-search-topic-site-topics-javascript"
+    layer="edem.skin.interfaces.IEDemLayer"
+    manager="gs.site.home.interfaces.ISiteHomeJS"
+    template="browser/templates/site-topics-ajax-js.pt"
+    class="gs.viewlet.viewlet.SiteViewlet"
+    permission="zope2.View"
+    weight="10"
+    title="Topics JavaScript" />
+  <!--Hide the original viewlet for including JavaScript-->
+  <browser:viewlet
+    name="gs-search-topic-site-topics-javascript"
+    layer="edem.skin.interfaces.IEDemLayer"
+    manager="gs.site.home.interfaces.ISiteHomeJS"
+    class=".viewlets.EmptyViewlet"
+    permission="zope2.View"/>
+
+
+</configure>
+
