@@ -3,7 +3,17 @@
   xmlns:browser="http://namespaces.zope.org/browser"
   xmlns:five="http://namespaces.zope.org/five">
 
-    
+  <!--The viewlet for the site homepage-->
+  <browser:viewlet
+    name="gs-search-topic-site-topics-ajax-hole"
+    manager="gs.site.home.interfaces.ISiteHomeActivity"
+    layer="edem.skin.interfaces.IEDemLayer"
+    template="browser/templates/site-topics-ajax-hole.pt"
+    class="gs.viewlet.viewlet.SiteViewlet"
+    permission="zope2.View"
+    weight="10"
+    title="Topics" />
+
   <browser:resource
     name="edem-search-topic-site-homepage-20140721.js"
     layer="edem.skin.interfaces.IEDemLayer"
